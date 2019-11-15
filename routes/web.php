@@ -11,4 +11,9 @@
 |
 */
 
+Auth::routes();
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+	Route::get('/', 'Admin\AdminPagesController@index');
+	Route::resource('/users', 'Admin\UserAdminController');
+});
 Route::get('/', 'PagesController@index');

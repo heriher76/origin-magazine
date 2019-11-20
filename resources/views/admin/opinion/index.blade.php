@@ -6,9 +6,9 @@
             <div class="card">
                 <div class="header">
                     <h1>
-                        Kedai Kopi
+                        Opini
                     </h1>
-                    <a href="{{ url('admin/profile/coffee-shops/create') }}" class="btn btn-primary waves-effect">Tambah</a>
+                    <a href="{{ url('admin/opinions/create') }}" class="btn btn-primary waves-effect">Tambah</a>
                 </div>
                 <br>
                 <div class="body">
@@ -18,22 +18,22 @@
                                 <tr>
                                     <th>Nama</th>
                                     <th>Deskripsi</th>
-                                    <th>Alamat</th>
+                                    <th>Author</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($coffeeShop as $service)
+                                @foreach($opinion as $service)
                                 <tr>
-                                    <td>{{ $service->name }}</td>
+                                    <td>{{ $service->title }}</td>
                                     <td>{{ str_limit(strip_tags($service->description), $limit = 90, $end = '...') }}</td>
-                                    <td>{!! $service->address !!}</td>
+                                    <td>{{ $service->author }}</td>
                                     <td>
-                                        <a href="{{ url('admin/profile/coffee-shops/'.$service->id.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
-                                        <form action="{{ url('admin/profile/coffee-shops/'.$service->id) }}" method="POST" style="display: inline;">
+                                        <a href="{{ url('admin/opinions/'.$service->id.'/edit') }}" class="btn btn-success btn-xs waves-effect">Edit</a>
+                                        <form action="{{ url('admin/opinions/'.$service->id) }}" method="POST" style="display: inline;">
                                             {{ csrf_field() }}
                                             {{ method_field('delete') }}
-                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Kedai Ini ?');">Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda Ingin Menghapus Event Ini ?');">Delete</button>
                                         </form>
                                     </td>
                                 </tr>

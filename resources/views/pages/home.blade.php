@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Home | Origin Magazine Indonesia')
+
 @section('contents')
 <div class="col-md-8 col-sm-12 col-xs-12">
 	<div class="owl-carousel owl-theme slide" id="featured">
@@ -486,102 +488,19 @@
 			</div>
 		</h1>
 		<div class="owl-carousel owl-theme carousel-1">
+			@foreach($opinions as $opinion)
 			<article class="article">
 				<div class="inner">
-					<figure>
-						<a href="single.html">
-							<img src="{{ url('front/images/news/img03.jpg') }}" alt="Sample Article">
-						</a>
-					</figure>
 					<div class="padding">
 						<div class="detail">
-								<div class="time">December 11, 2016</div>
+								<div class="time">{{ $opinion->updated_at->formatLocalized('%A, %d %B %Y') }}</div>
 						</div>
-						<h2><a href="single.html">tempor interdum Praesent tincidunt</a></h2>
-						<p>Praesent tincidunt, leo vitae congue molestie.</p>
+						<h2><a href="single.html">{{ $opinion->title }}</a></h2>
+						<p>{!! str_limit(strip_tags($opinion->description), $limit = 90, $end = '...') !!}</p>
 					</div>
 				</div>
 			</article>
-			<article class="article">
-				<div class="inner">
-					<figure>
-						<a href="single.html">
-							<img src="{{ url('front/images/news/img16.jpg') }}" alt="Sample Article">
-						</a>
-					</figure>
-					<div class="padding">
-						<div class="detail">
-							<div class="time">December 09, 2016</div>
-						</div>
-						<h2><a href="single.html">Maecenas porttitor sit amet turpis a semper</a></h2>
-						<p> Proin vulputate, urna id porttitor luctus, dui augue facilisis lacus.</p>
-					</div>
-				</div>
-			</article>
-			<article class="article">
-				<div class="inner">
-					<figure>
-						<a href="single.html">
-							<img src="{{ url('front/images/news/img15.jpg') }}" alt="Sample Article">
-						</a>
-					</figure>
-					<div class="padding">
-						<div class="detail">
-							<div class="time">December 26, 2016</div>
-						</div>
-						<h2><a href="single.html">Fusce ac odio eu ex volutpat pellentesque</a></h2>
-						<p>Vestibulum ante ipsum primis in faucibus orci luctus</p>
-					</div>
-				</div>
-			</article>
-			<article class="article">
-				<div class="inner">
-					<figure>
-						<a href="single.html">
-							<img src="{{ url('front/images/news/img14.jpg') }}" alt="Sample Article">
-						</a>
-					</figure>
-					<div class="padding">
-						<div class="detail">
-							<div class="time">December 26, 2016</div>
-						</div>
-						<h2><a href="single.html">Nulla facilisis odio quis gravida vestibulum</a></h2>
-						<p>Proin venenatis pellentesque arcu, ut mattis nulla placerat et.</p>
-					</div>
-				</div>
-			</article>
-			<article class="article">
-				<div class="inner">
-					<figure>
-						<a href="single.html">
-							<img src="{{ url('front/images/news/img01.jpg') }}" alt="Sample Article">
-						</a>
-					</figure>
-					<div class="padding">
-						<div class="detail">
-							<div class="time">December 26, 2016</div>
-						</div>
-						<h2><a href="single.html">Fusce Ullamcorper Elit At Felis Cursus Suscipit</a></h2>
-						<p>Proin venenatis pellentesque arcu, ut mattis nulla placerat et.</p>
-					</div>
-				</div>
-			</article>
-			<article class="article">
-				<div class="inner">
-					<figure>
-						<a href="single.html">
-							<img src="{{ url('front/images/news/img11.jpg') }}" alt="Sample Article">
-						</a>
-					</figure>
-					<div class="padding">
-						<div class="detail">
-							<div class="time">December 26, 2016</div>
-						</div>
-						<h2><a href="single.html">Donec consequat arcu at ultrices sodales</a></h2>
-						<p>Proin venenatis pellentesque arcu, ut mattis nulla placerat et.</p>
-					</div>
-				</div>
-			</article>
+			@endforeach
 		</div>
 	</div>
 </section>

@@ -3,32 +3,47 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Opinion;
+use App\CoffeeShop;
+use App\Figure;
+use App\Community;
+use App\News;
 
 class PagesController extends Controller
 {
     public function index()
     {
-    	return view('pages.home');
+        $opinions = Opinion::orderBy('updated_at', 'desc')->get();
+
+    	return view('pages.home', compact('opinions'));
     }
 
     public function coffeeShop()
     {
-    	return view('pages.profile.coffee-shop');
+        $coffeeShops = CoffeeShop::orderBy('updated_at', 'desc')->get();
+
+    	return view('pages.profile.coffee-shop', compact('coffeeShops'));
     }
 
     public function figure()
     {
-    	return view('pages.profile.figure');
+        $figures = Figure::orderBy('updated_at', 'desc')->get();
+
+    	return view('pages.profile.figure', compact('figures'));
     }
 
     public function community()
     {
-    	return view('pages.profile.community');
+        $communities = Community::orderBy('updated_at', 'desc')->get();
+
+    	return view('pages.profile.community', compact('communities'));
     }
 
     public function news()
     {
-        return view('pages.news.index');
+        $news = News::orderBy('updated_at', 'desc')->get();
+
+        return view('pages.news.index', compact('news'));
     }
 
     public function showNews()

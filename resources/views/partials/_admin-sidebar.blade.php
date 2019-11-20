@@ -15,8 +15,9 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ url('/admin/visi-misi') }}">Visi dan Misi</a></li>
-          <li><a href="{{ url('/admin/structure-organization') }}">Struktur Organisasi</a></li>
+          <li><a href="{{ url('/admin/profile/coffee-shops') }}">Kedai Kopi</a></li>
+          <li><a href="{{ url('/admin/profile/communities') }}">Komunitas</a></li>
+          <li><a href="{{ url('/admin/profile/figures') }}">Sosok</a></li>
         </ul>
       </li>
       <li class="treeview">
@@ -32,26 +33,25 @@
         </ul>
       </li>
       <li class="treeview">
-        <a href="#"><i class="fa fa-photo"></i> <span>Galeri</span>
+        <a href="#"><i class="fa fa-play"></i> <span>Event</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ url('/admin/gallery') }}">List Photo</a></li>
-          <li><a href="{{ url('/admin/gallery/create?type=image') }}">Tambah Photo</a></li>
-          <li><a href="{{ url('/admin/gallery/create?type=video') }}">Tambah Video</a></li>
+          <li><a href="{{ url('/admin/events') }}">List Event</a></li>
+          <li><a href="{{ url('/admin/events/create') }}">Tambah Event</a></li>
         </ul>
       </li>
       <li class="treeview">
-        <a href="#"><i class="fa fa-home"></i> <span>Beranda</span>
+        <a href="#"><i class="fa fa-chain"></i> <span>Promosi</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ url('/admin/welcome') }}">Ucapan Selamat Datang</a></li>
-          <li><a href="{{ url('/admin/overview') }}">Selayang Pandang Organisasi</a></li>
+          <li><a href="{{ url('/admin/promotions') }}">List Promosi</a></li>
+          <li><a href="{{ url('/admin/promotions/create') }}">Tambah Promosi</a></li>
         </ul>
       </li>
       <li class="treeview">

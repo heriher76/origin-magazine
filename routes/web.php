@@ -15,6 +15,13 @@ Auth::routes();
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', 'Admin\AdminPagesController@index');
 	Route::resource('/users', 'Admin\UserAdminController');
+	Route::resource('/profile/coffee-shops', 'Admin\CoffeeShopController');
+	Route::resource('/profile/communities', 'Admin\CommunityController');
+	Route::resource('/profile/figures', 'Admin\FigureController');
+	Route::resource('/news', 'Admin\NewsController');
+	Route::resource('/events', 'Admin\EventController');
+	Route::resource('/promotions', 'Admin\PromotionController');
+	Route::resource('/opinions', 'Admin\OpinionController');
 });
 Route::get('/profile/coffee-shop', 'PagesController@coffeeShop');
 Route::get('/profile/community', 'PagesController@community');

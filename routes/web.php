@@ -28,6 +28,7 @@ Route::get('/profile/community', 'PagesController@community');
 Route::get('/profile/figure', 'PagesController@figure');
 Route::get('/news', 'PagesController@news');
 Route::get('/events', 'PagesController@events');
+Route::get('/events/{slug}', 'PagesController@showEvent');
 Route::get('/promotions', 'PagesController@promotions');
 Route::get('/opinions', 'PagesController@opinions');
 Route::get('/{slug}', 'PagesController@showNews');

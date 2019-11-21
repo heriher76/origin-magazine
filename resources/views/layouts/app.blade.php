@@ -94,8 +94,7 @@
 									WhatsApp : +62 831 4955 2462 <br>
 									Email : redaksi.origin@gmail.com
 								</p>
-								<br>
-								<a href="page.html" class="btn btn-magz white">Tentang Kami <i class="ion-ios-arrow-thin-right"></i></a>
+								<!-- <a href="" class="btn btn-magz white">Tentang Kami <i class="ion-ios-arrow-thin-right"></i></a> -->
 							</div>
 						</div>
 					</div>
@@ -104,13 +103,13 @@
 							<h1 class="block-title">Menu </h1>
 							<div class="block-body">
 								<ul>
-									<li><a href="#">Profil Kedai Kopi</a></li>
-									<li><a href="#">Profil Komunitas</a></li>
-									<li><a href="#">Berita Seputar Kopi</a></li>
-									<li><a href="#">Profil Sosok</a></li>
-									<li><a href="#">Event</a></li>
-									<li><a href="#">Promosi Produk</a></li>
-									<li><a href="#">Kolom Opini</a></li>
+									<li><a href="{{ url('profile/coffee-shop') }}">Profil Kedai Kopi</a></li>
+									<li><a href="{{ url('profile/community') }}">Profil Komunitas</a></li>
+									<li><a href="{{ url('profile/figure') }}">Profil Sosok</a></li>
+									<li><a href="{{ url('news') }}">Berita Seputar Kopi</a></li>
+									<li><a href="{{ url('events') }}">Event</a></li>
+									<li><a href="{{ url('promotions') }}">Promosi Produk</a></li>
+									<li><a href="{{ url('opinions') }}">Kolom Opini</a></li>
 								</ul>
 							</div>
 						</div>
@@ -118,57 +117,23 @@
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="block">
-							<h1 class="block-title">Berita Terbaru</h1>
+							<h1 class="block-title">Promosi</h1>
 							<div class="block-body">
+								@foreach($footPromotions as $foot)
 								<article class="article-mini">
 									<div class="inner">
 										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img12.jpg') }}" alt="Sample Article">
+											<a href="{{ url('promotions') }}">
+												<img src="{{ url('promotion/'.$foot->thumbnail) }}" alt="">
 											</a>
 										</figure>
 										<div class="padding">
-											<h1><a href="single.html">Donec consequat lorem quis augue pharetra</a></h1>
+											<h1><a href="{{ url('promotions') }}">{{ $foot->title }}</a></h1>
 										</div>
 									</div>
 								</article>
-								<article class="article-mini">
-									<div class="inner">
-										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img14.jpg') }}" alt="Sample Article">
-											</a>
-										</figure>
-										<div class="padding">
-											<h1><a href="single.html">eu dapibus risus aliquam etiam ut venenatis</a></h1>
-										</div>
-									</div>
-								</article>
-								<article class="article-mini">
-									<div class="inner">
-										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img15.jpg') }}" alt="Sample Article">
-											</a>
-										</figure>
-										<div class="padding">
-											<h1><a href="single.html">Nulla facilisis odio quis gravida vestibulum </a></h1>
-										</div>
-									</div>
-								</article>
-								<article class="article-mini">
-									<div class="inner">
-										<figure>
-											<a href="single.html">
-												<img src="{{ url('front/images/news/img16.jpg') }}" alt="Sample Article">
-											</a>
-										</figure>
-										<div class="padding">
-											<h1><a href="single.html">Proin venenatis pellentesque arcu vitae </a></h1>
-										</div>
-									</div>
-								</article>
-								<a href="#" class="btn btn-magz white btn-block">Lihat Semua <i class="ion-ios-arrow-thin-right"></i></a>
+								@endforeach
+								<a href="{{ url('promotions') }}" class="btn btn-magz white btn-block">Lihat Semua <i class="ion-ios-arrow-thin-right"></i></a>
 							</div>
 						</div>
 					</div>

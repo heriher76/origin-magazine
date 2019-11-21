@@ -31,7 +31,9 @@
 	</div>
 </div>
 @endforeach
-
+<div class="col-md-12 text-center">
+    {{ $coffeeShops->links() }}
+</div>
 @stop
 
 @section('styles')

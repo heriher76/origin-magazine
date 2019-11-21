@@ -29,7 +29,9 @@
     </div>
 </div>
 @endforeach
-
+<div class="col-md-12 text-center">
+    {{ $communities->links() }}
+</div>
 @stop
 
 @section('styles')
